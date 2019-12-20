@@ -1,7 +1,15 @@
 package com.aaa.lee.app.model;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
+import javax.persistence.*;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 @Table(name = "pms_album_pic")
 public class AlbumPic {
     @Id
@@ -13,45 +21,4 @@ public class AlbumPic {
 
     private String pic;
 
-    /**
-     * @return id
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /**
-     * @return album_id
-     */
-    public Long getAlbumId() {
-        return albumId;
-    }
-
-    /**
-     * @param albumId
-     */
-    public void setAlbumId(Long albumId) {
-        this.albumId = albumId;
-    }
-
-    /**
-     * @return pic
-     */
-    public String getPic() {
-        return pic;
-    }
-
-    /**
-     * @param pic
-     */
-    public void setPic(String pic) {
-        this.pic = pic == null ? null : pic.trim();
-    }
-}
+  }

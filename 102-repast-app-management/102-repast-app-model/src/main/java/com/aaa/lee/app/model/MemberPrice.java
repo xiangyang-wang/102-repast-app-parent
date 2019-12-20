@@ -1,8 +1,16 @@
 package com.aaa.lee.app.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 @Table(name = "pms_member_price")
 public class MemberPrice {
     @Id
@@ -27,91 +35,5 @@ public class MemberPrice {
     @Column(name = "member_level_name")
     private String memberLevelName;
 
-    /**
-     * @return id
-     */
-    public Long getId() {
-        return id;
-    }
 
-    /**
-     * @param id
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /**
-     * @return shop_id
-     */
-    public Long getShopId() {
-        return shopId;
-    }
-
-    /**
-     * @param shopId
-     */
-    public void setShopId(Long shopId) {
-        this.shopId = shopId;
-    }
-
-    /**
-     * @return product_id
-     */
-    public Long getProductId() {
-        return productId;
-    }
-
-    /**
-     * @param productId
-     */
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    /**
-     * @return member_level_id
-     */
-    public Long getMemberLevelId() {
-        return memberLevelId;
-    }
-
-    /**
-     * @param memberLevelId
-     */
-    public void setMemberLevelId(Long memberLevelId) {
-        this.memberLevelId = memberLevelId;
-    }
-
-    /**
-     * 获取会员价格
-     *
-     * @return member_price - 会员价格
-     */
-    public BigDecimal getMemberPrice() {
-        return memberPrice;
-    }
-
-    /**
-     * 设置会员价格
-     *
-     * @param memberPrice 会员价格
-     */
-    public void setMemberPrice(BigDecimal memberPrice) {
-        this.memberPrice = memberPrice;
-    }
-
-    /**
-     * @return member_level_name
-     */
-    public String getMemberLevelName() {
-        return memberLevelName;
-    }
-
-    /**
-     * @param memberLevelName
-     */
-    public void setMemberLevelName(String memberLevelName) {
-        this.memberLevelName = memberLevelName == null ? null : memberLevelName.trim();
-    }
 }

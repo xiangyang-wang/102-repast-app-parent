@@ -1,8 +1,16 @@
 package com.aaa.lee.app.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 @Table(name = "pms_product_full_reduction")
 public class ProductFullReduction {
     @Id
@@ -21,73 +29,5 @@ public class ProductFullReduction {
     @Column(name = "reduce_price")
     private BigDecimal reducePrice;
 
-    /**
-     * @return id
-     */
-    public Long getId() {
-        return id;
-    }
 
-    /**
-     * @param id
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /**
-     * @return shop_id
-     */
-    public Long getShopId() {
-        return shopId;
-    }
-
-    /**
-     * @param shopId
-     */
-    public void setShopId(Long shopId) {
-        this.shopId = shopId;
-    }
-
-    /**
-     * @return product_id
-     */
-    public Long getProductId() {
-        return productId;
-    }
-
-    /**
-     * @param productId
-     */
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    /**
-     * @return full_price
-     */
-    public BigDecimal getFullPrice() {
-        return fullPrice;
-    }
-
-    /**
-     * @param fullPrice
-     */
-    public void setFullPrice(BigDecimal fullPrice) {
-        this.fullPrice = fullPrice;
-    }
-
-    /**
-     * @return reduce_price
-     */
-    public BigDecimal getReducePrice() {
-        return reducePrice;
-    }
-
-    /**
-     * @param reducePrice
-     */
-    public void setReducePrice(BigDecimal reducePrice) {
-        this.reducePrice = reducePrice;
-    }
 }

@@ -1,7 +1,15 @@
 package com.aaa.lee.app.model;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
+import javax.persistence.*;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Accessors(chain = true)
 @Table(name = "pms_album")
 public class Album {
     @Id
@@ -23,101 +31,5 @@ public class Album {
 
     private String description;
 
-    /**
-     * @return id
-     */
-    public Long getId() {
-        return id;
-    }
 
-    /**
-     * @param id
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /**
-     * @return shop_id
-     */
-    public Long getShopId() {
-        return shopId;
-    }
-
-    /**
-     * @param shopId
-     */
-    public void setShopId(Long shopId) {
-        this.shopId = shopId;
-    }
-
-    /**
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * @param name
-     */
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    /**
-     * @return cover_pic
-     */
-    public String getCoverPic() {
-        return coverPic;
-    }
-
-    /**
-     * @param coverPic
-     */
-    public void setCoverPic(String coverPic) {
-        this.coverPic = coverPic == null ? null : coverPic.trim();
-    }
-
-    /**
-     * @return pic_count
-     */
-    public Integer getPicCount() {
-        return picCount;
-    }
-
-    /**
-     * @param picCount
-     */
-    public void setPicCount(Integer picCount) {
-        this.picCount = picCount;
-    }
-
-    /**
-     * @return sort
-     */
-    public Integer getSort() {
-        return sort;
-    }
-
-    /**
-     * @param sort
-     */
-    public void setSort(Integer sort) {
-        this.sort = sort;
-    }
-
-    /**
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * @param description
-     */
-    public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
-    }
 }
