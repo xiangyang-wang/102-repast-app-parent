@@ -17,6 +17,8 @@ public enum  LoginStatus {
     USER_HAS_PERMISSION("202", "用户拥有登录权限"),
     USER_HAS_NOT_PERMISSION("406", "用户没有登录权限");
 
+
+
     LoginStatus(String code, String msg) {
         this.code = code;
         this.msg = msg;

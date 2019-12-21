@@ -1,6 +1,7 @@
 package com.aaa.lee.app.base;
 
 import com.aaa.lee.app.status.LoginStatus;
+import com.aaa.lee.app.status.ShopStatus;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -98,4 +99,99 @@ public class BaseController {
 
     // TODO 暂时未完成，需要什么方法自己添加
 
+    /**
+     * @author Seven Lee
+     * @description
+     *      统一返回值，登录成功，使用系统消息返回并返回数据
+     * @param []
+     * @date 2019/12/18
+     * @return com.aaa.lee.app.base.ResultData
+     * @throws
+     **/
+    protected ResultData shopHomeSuccess(Object data) {
+        ResultData resultData = new ResultData();
+        resultData.setCode(ShopStatus.SHOP_HOME.getCode());
+        resultData.setMsg(ShopStatus.SHOP_HOME.getMsg());
+        resultData.setData(data);
+        return resultData;
+    }
+    /**
+     * @author Seven Lee
+     * @description
+     *      登录失败，返回系统消息
+     * @param []
+     * @date 2019/12/18
+     * @return com.aaa.lee.app.base.ResultData
+     * @throws
+     **/
+    protected ResultData shopHomeFailed() {
+        ResultData resultData = new ResultData();
+        resultData.setCode(ShopStatus.SHOP_HOME_FAILED.getCode());
+        resultData.setMsg(ShopStatus.SHOP_HOME_FAILED.getMsg());
+        return resultData;
+    }
+
+    /**
+     * @author Seven Lee
+     * @description
+     *      统一返回值，登录成功，使用系统消息返回并返回数据
+     * @param []
+     * @date 2019/12/18
+     * @return com.aaa.lee.app.base.ResultData
+     * @throws
+     **/
+    protected ResultData shopDetailsSuccess(Object data) {
+        ResultData resultData = new ResultData();
+        resultData.setCode(ShopStatus.SHOP_DETAILS.getCode());
+        resultData.setMsg(ShopStatus.SHOP_DETAILS.getMsg());
+        resultData.setData(data);
+        return resultData;
+    }
+    /**
+     * @author Seven Lee
+     * @description
+     *      登录失败，返回系统消息
+     * @param []
+     * @date 2019/12/18
+     * @return com.aaa.lee.app.base.ResultData
+     * @throws
+     **/
+    protected ResultData shopDetailsFailed() {
+        ResultData resultData = new ResultData();
+        resultData.setCode(ShopStatus.SHOP_DETAILS_FAILED.getCode());
+        resultData.setMsg(ShopStatus.SHOP_DETAILS_FAILED.getMsg());
+        return resultData;
+    }
+
+    /**
+     * @author Seven Lee
+     * @description
+     *      统一返回值，登录成功，使用系统消息返回并返回数据
+     * @param []
+     * @date 2019/12/18
+     * @return com.aaa.lee.app.base.ResultData
+     * @throws
+     **/
+    protected ResultData shopAlbumSuccess(Object data) {
+        ResultData resultData = new ResultData();
+        resultData.setCode(ShopStatus.SHOP_ALBUM.getCode());
+        resultData.setMsg(ShopStatus.SHOP_ALBUM.getMsg());
+        resultData.setData(data);
+        return resultData;
+    }
+    /**
+     * @author Seven Lee
+     * @description
+     *      登录失败，返回系统消息
+     * @param []
+     * @date 2019/12/18
+     * @return com.aaa.lee.app.base.ResultData
+     * @throws
+     **/
+    protected ResultData shopAlbumFailed() {
+        ResultData resultData = new ResultData();
+        resultData.setCode(ShopStatus.SHOP_ALBUM_FAILED.getCode());
+        resultData.setMsg(ShopStatus.SHOP_ALBUM_FAILED.getMsg());
+        return resultData;
+    }
 }

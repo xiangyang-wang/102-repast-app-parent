@@ -12,7 +12,7 @@
     <artifactId>102-repast-app-consumer-management</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>102-repast-app-userinfo-consumer-6081</module>
+        <module>102-repast-app-shop-consumer-6086</module>
     </modules>
 
     <dependencies>

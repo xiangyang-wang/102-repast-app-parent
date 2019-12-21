@@ -13,4 +13,9 @@
     <result column="sort" property="sort" jdbcType="INTEGER" />
     <result column="description" property="description" jdbcType="VARCHAR" />
   </resultMap>
+  <select id="getShopAlbumPic" parameterType="long" resultType="com.aaa.lee.app.vo.ShopAlbumVo">
+    select pa.shop_id,pa.name, pa.pic_count,pa.description,pa.cover_pic,pa.sort ,pap.album_id,pap.pic
+      from pms_album pa inner join pms_album_pic pap on pa.id = pap.album_id where pa.shop_id=#{shopId}
+
+  </select>
 </mapper>
