@@ -15,6 +15,7 @@ public enum  LoginStatus {
     PASSWORD_WRONG("405", "密码错误"),
     LOGOUT_WRONG("403", "用户退出异常"),
     USER_HAS_PERMISSION("202", "用户拥有登录权限"),
+    USER_NO_TOKEN("405", "位登录请先登录"),
     USER_HAS_NOT_PERMISSION("406", "用户没有登录权限");
 
 

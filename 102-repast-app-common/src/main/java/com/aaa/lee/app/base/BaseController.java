@@ -1,5 +1,6 @@
 package com.aaa.lee.app.base;
 
+import com.aaa.lee.app.status.CommentStatus;
 import com.aaa.lee.app.status.LoginStatus;
 import com.aaa.lee.app.status.ShopStatus;
 import org.springframework.stereotype.Controller;
@@ -96,7 +97,21 @@ public class BaseController {
         resultData.setMsg(LoginStatus.LOGIN_FAILED.getMsg());
         return resultData;
     }
-
+    /**
+     * @author Seven Lee
+     * @description
+     *      登录失败，返回自定义消息
+     * @param []
+     * @date 2019/12/18
+     * @return com.aaa.lee.app.base.ResultData
+     * @throws
+     **/
+    protected ResultData getTokenFailed() {
+        ResultData resultData = new ResultData();
+        resultData.setCode(LoginStatus.USER_NO_TOKEN.getCode());
+        resultData.setMsg(LoginStatus.USER_NO_TOKEN.getMsg());
+        return resultData;
+    }
     // TODO 暂时未完成，需要什么方法自己添加
 
     /**
@@ -192,6 +207,40 @@ public class BaseController {
         ResultData resultData = new ResultData();
         resultData.setCode(ShopStatus.SHOP_ALBUM_FAILED.getCode());
         resultData.setMsg(ShopStatus.SHOP_ALBUM_FAILED.getMsg());
+        return resultData;
+    }
+
+
+
+    /**
+     * @author Seven Lee
+     * @description
+     *      统一返回值，登录成功，使用系统消息返回并返回数据
+     * @param []
+     * @date 2019/12/18
+     * @return com.aaa.lee.app.base.ResultData
+     * @throws
+     **/
+    protected ResultData getCommentSuccess(Object data) {
+        ResultData resultData = new ResultData();
+        resultData.setCode(CommentStatus.COMMENT_SESSION.getCode());
+        resultData.setMsg(CommentStatus.COMMENT_SESSION.getMsg());
+        resultData.setData(data);
+        return resultData;
+    }
+    /**
+     * @author Seven Lee
+     * @description
+     *      登录失败，返回系统消息
+     * @param []
+     * @date 2019/12/18
+     * @return com.aaa.lee.app.base.ResultData
+     * @throws
+     **/
+    protected ResultData getCommentFailed() {
+        ResultData resultData = new ResultData();
+        resultData.setCode(CommentStatus.COMMENT_FAILED.getCode());
+        resultData.setMsg(CommentStatus.COMMENT_FAILED.getMsg());
         return resultData;
     }
 }

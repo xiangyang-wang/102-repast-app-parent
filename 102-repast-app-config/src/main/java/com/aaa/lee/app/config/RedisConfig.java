@@ -2,6 +2,7 @@ package com.aaa.lee.app.config;
 
 import com.aaa.lee.app.properties.RedisProperties;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisCluster;
@@ -16,12 +17,12 @@ import java.util.Set;
  * @Description
  *      只能使用@Configuration不能使用@SpringBootApplication注解
  **/
-//@Configuration
+@Configuration
 public class RedisConfig {
 
-   /* @Autowired
+    @Autowired
     private RedisProperties redisProperties;
-
+    @Bean
     public JedisCluster jedisCluster() {
         String nodes = redisProperties.getNodes();
         String[] split = nodes.split(",");
@@ -33,6 +34,6 @@ public class RedisConfig {
         }
         JedisCluster jedisCluster = new JedisCluster(hostAndPortSet, Integer.parseInt(redisProperties.getCommandTimeout()), Integer.parseInt(redisProperties.getMaxAttempts()));
         return jedisCluster;
-    }*/
+    }
 
 }

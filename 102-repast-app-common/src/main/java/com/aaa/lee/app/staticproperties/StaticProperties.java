@@ -9,5 +9,9 @@ package com.aaa.lee.app.staticproperties;
 public class StaticProperties {
 
     public static final String OK = "OK";
+    /**
+     * 评论一页显示条数
+     */
+    public static final Long  COMMENTPAGESIZE=5L;
 
 }
