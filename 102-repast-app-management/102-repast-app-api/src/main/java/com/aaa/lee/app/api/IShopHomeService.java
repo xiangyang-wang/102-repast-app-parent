@@ -25,11 +25,10 @@ public interface IShopHomeService {
     List<Object> getShopHome(@RequestParam("shopId") Long shopId);
 
     @GetMapping("/shopInfoDetails")
-     ShopInformation getShopInfoDetails(@RequestParam("shopId") Long shopId);
+    ShopInformation getShopInfoDetails(@RequestParam("shopId") Long shopId);
 
     @GetMapping("/shopAlbumPic")
      List<ShopAlbumVo> getShopAlbumPic(@RequestParam("shopId") Long shopId);
-
 
     @PostMapping("/getCommentInfo")
      List<ShopCommentVo> getCommentInfo(@RequestParam("shopId")Long shopId, @RequestParam("productId")Long productId, @RequestParam("pageNum")Long pageNum);

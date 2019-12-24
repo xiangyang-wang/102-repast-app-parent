@@ -21,8 +21,8 @@ import java.util.List;
 @Service
 public class ShopAlbumService extends BaseService<Album> {
 
-    @Value("shop_details")
-    private String shopDetails;
+    @Value("shop_pic")
+    private String shopPic;
 
     @Autowired
     private AlbumMapper albumMapper;
@@ -39,7 +39,7 @@ public class ShopAlbumService extends BaseService<Album> {
      */
     public List<ShopAlbumVo> getShopAlbumPic(RedisService redisService, Long shopId){
         //先查询redis有没有
-        String redisResult = redisService.get(shopDetails+shopId);
+        String redisResult = redisService.get(shopPic+shopId);
         //如果有直接返回
         if (!"".equals(redisResult) && null != redisResult){
             return    JSONUtil.toList(redisResult, ShopAlbumVo.class);
@@ -50,7 +50,7 @@ public class ShopAlbumService extends BaseService<Album> {
         if (shopAlbumPic.size()>0){
             //如果数据不为空存入redis
             String info = JSONUtil.toJsonString(shopAlbumPic);
-            String count = redisService.set(shopDetails + shopId, info);
+            String count = redisService.set(shopPic + shopId, info);
             if ("OK".equals(count.toUpperCase())){
 
                 return shopAlbumPic;
